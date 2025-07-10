@@ -1,0 +1,14 @@
+@server_HostAddress = http://localhost:5270
+
+POST {{server_HostAddress}}/api/account/login
+Accept: application/json
+{
+  "username" : "engel",
+  "password" : "prueba1234"
+}
+###
+GET {{server_HostAddress}}/api/user/getall
+Accept: application/json
+###
+GET {{server_HostAddress}}/api/user/getbyid/a0e94752-2025-4d23-97b5-84cc1a59f8c1
+Accept: application/json
