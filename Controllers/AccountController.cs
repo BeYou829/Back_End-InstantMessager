@@ -15,7 +15,7 @@ namespace server.Controllers
         {
             var token = await accountService.Login(loginRequest);
             if (token.IsFailure)
-                return BadRequest(token.Error);
+                return BadRequest(new { ErrorCode = token.Error.Code, ErrorMessage = token.Error.Description });
 
             return Ok(new { token = token.Value });
         }
